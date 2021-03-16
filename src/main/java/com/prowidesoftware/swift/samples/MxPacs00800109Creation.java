@@ -25,7 +25,7 @@ public class MxPacs00800109Creation {
     public static void main(String[] args) {
         MxPacs00800109 mx = new MxPacs00800109();
 
-        // initialize Group Header
+        // initialize group header
         mx.setFIToFICstmrCdtTrf(new FIToFICustomerCreditTransferV09().setGrpHdr(new GroupHeader93()));
 
         // general information
@@ -40,7 +40,7 @@ public class MxPacs00800109Creation {
         // create credit transfer transaction information
         CreditTransferTransaction43 ctt = new CreditTransferTransaction43();
 
-        // transaction Identification
+        // transaction identification
         ctt.setPmtId(new PaymentIdentification13());
         ctt.getPmtId().setUETR(UUID.randomUUID().toString());
         ctt.getPmtId().setEndToEndId("TBEXO12345");
@@ -59,7 +59,7 @@ public class MxPacs00800109Creation {
         ctt.getDbtr().setNm("JOE DOE");
         ctt.getDbtr().setPstlAdr((new PostalAddress24()).addAdrLine("310 Field Road, NY"));
 
-        // order Financial Institution
+        // order financial institution
         ctt.setDbtrAgt((new BranchAndFinancialInstitutionIdentification6())
                 .setFinInstnId(new FinancialInstitutionIdentification18().setBICFI("FOOBARC0XXX")));
 
